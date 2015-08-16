@@ -2,30 +2,20 @@ noremap <Left> <nop>
 noremap <Down> <nop>
 noremap <Up> <nop>
 noremap <Right> <nop>
-nnoremap ; :
-vnoremap ; :
-nnoremap <C-H> ^
-nnoremap <C-J> <C-F>
-nnoremap <C-K> <C-B>
-nnoremap <C-L> $
-vnoremap <C-H> ^
-vnoremap <C-J> <C-F>
-vnoremap <C-K> <C-B>
-vnoremap <C-L> $
+inoremap <Left> <nop>
+inoremap <Down> <nop>
+inoremap <Up> <nop>
+inoremap <Right> <nop>
+noremap ; :
+noremap <C-H> ^
+noremap <C-J> <C-F>
+noremap <C-K> <C-B>
+noremap <C-L> $
 nnoremap <F2> :Texplore<CR>
-nnoremap <F3> :!grep -i -r -C5 '<C-R><C-W>' . \| less<CR>
 nnoremap <F4> :tabnew<CR>
-nnoremap <F5> :checktime<CR>
+nnoremap <F5> :checktime<CR>:syntax sync fromstart<CR>
 nnoremap <Tab> gt
 nnoremap <S-Tab> gT
-"vnoremap q* <Esc>`>a*/<Esc>`<i/*<Esc>h
-"vnoremap q!* <Esc>`>hxx`<xx
-"vnoremap q# :s/^\(\s*\)/\1#/<CR>
-"vnoremap q!# :s/^\(\s*\)#/\1/<CR>
-"vnoremap q/ :s!^\(\s*\)!\1//!<CR>
-"vnoremap q!/ :s!^\(\s*\)//!\1!<CR>
-"vnoremap q; :s/^\(\s*\)/\1;/<CR>
-"vnoremap q!; :s/^\(\s*\);/\1/<CR>
 inoremap ( ()<Left>
 inoremap {<CR> {<CR>}<Esc>O<Tab>
 inoremap {;<CR> {<CR>};<Esc>O<Tab>
@@ -50,6 +40,7 @@ set nowritebackup
 set number
 set pastetoggle=<F6>
 set path=$PWD/**
+set relativenumber
 set shiftwidth=4
 set softtabstop=4
 set splitbelow
