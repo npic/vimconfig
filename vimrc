@@ -12,6 +12,8 @@ noremap <C-J> <C-F>
 noremap <C-K> <C-B>
 noremap <C-L> $
 nnoremap <F2> :Texplore<CR>
+nnoremap <F3> :call InteractiveGrep("<C-R><C-W>")<CR>
+vnoremap <F3> :lvimgrep /<C-R>*/gj ./**<CR>:tab lw<CR>
 nnoremap <F4> :tabnew<CR>
 nnoremap <F5> :checktime<CR>:syntax sync fromstart<CR>
 nnoremap <Tab> gt
@@ -45,8 +47,25 @@ set shiftwidth=4
 set softtabstop=4
 set splitbelow
 set splitright
+set switchbuf+=usetab,newtab
 set tabstop=8
 filetype plugin on
 syntax on
 highlight MatchParen ctermbg=4
+
+augroup autorun
+    autocmd!
+    autocmd BufReadPost quickfix nnoremap <buffer> <CR> <CR><C-W>T
+augroup END
+
+function! InteractiveGrep(default)
+    call inputsave()
+    let what = input("Search for: ", a:default)
+    call inputrestore()
+    if(empty(what))
+        return
+    endif
+    execute "lvimgrep /" . what . "/gj ./**"
+    tab lw
+endfunction
 
