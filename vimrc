@@ -13,7 +13,7 @@ noremap <C-K> <C-B>
 noremap <C-L> $
 nnoremap <F2> :Texplore<CR>
 nnoremap <F3> :call InteractiveGrep("<C-R><C-W>")<CR>
-vnoremap <F3> :lvimgrep /<C-R>*/gj ./**<CR>:tab lw<CR>
+vnoremap <F3> :call InteractiveGrep("<C-R>*")<CR>
 nnoremap <F4> :tabnew<CR>
 nnoremap <F5> :checktime<CR>:syntax sync fromstart<CR>
 nnoremap <Tab> gt
