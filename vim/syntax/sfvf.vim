@@ -13,18 +13,17 @@
 if exists("b:current_syntax")
     unlet b:current_syntax
 endif
-runtime! syntax/html.vim
+runtime! syntax/xml.vim
 
 " higihlight visualforce tags as html tags
-syn match htmlTagName contained "\(c\|apex\|chatter\|flow\|ideas\|knowledge\|messaging\|site\):[a-z]\+[A-Za-z]*"
+"syn match xmlTagName contained "\(c\|apex\|chatter\|flow\|ideas\|knowledge\|messaging\|site\):[a-z]\+[A-Za-z]*"
 
 " fix syntax breakage when using '&{'in the code looking something like this
 " <apex:outputLink value="/path?param=1&{!mergeVar}">link</apex:outputLink>
-syn match htmlSpecialChar contained "&{"
-syn region htmlSpecialChar start=+{!+ end=+}+
+"syn match htmlSpecialChar contained "&{"
+"syn region htmlSpecialChar start=+{!+ end=+}+
 
 " fix syntax breakage when using CSS url("{!merge expression}")
-syn region cssURL contained matchgroup=cssFunctionName start="\<url\s*('{!" end="}')" oneline extend
-syn region cssURL contained matchgroup=cssFunctionName start="\<url\s*(\"{!" end="}\")" oneline extend
-
+"syn region cssURL contained matchgroup=cssFunctionName start="\<url\s*('{!" end="}')" oneline extend
+"syn region cssURL contained matchgroup=cssFunctionName start="\<url\s*(\"{!" end="}\")" oneline extend
 

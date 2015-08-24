@@ -1,3 +1,4 @@
+runtime! ftplugin/xml.vim
 setlocal colorcolumn=120
 setlocal noexpandtab
 setlocal shiftwidth=0

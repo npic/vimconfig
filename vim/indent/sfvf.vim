@@ -6,4 +6,4 @@
 "
 " indent config for visualforce code files
 
-runtime! indent/html.vim
+runtime! indent/xml.vim
